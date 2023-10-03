@@ -1,11 +1,15 @@
 package main
 
 import (
-	"fmt"
+	"log"
 
-	"github.com/fatih/color"
+	"github.com/sornick01/auth/internal/app"
 )
 
 func main() {
-	fmt.Println(color.GreenString("Hello, world!"))
+	a := app.New()
+	err := a.RunApp("9933")
+	if err != nil {
+		log.Fatal(err)
+	}
 }
